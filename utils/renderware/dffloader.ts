@@ -1,3 +1,6 @@
+// https://github.com/andrewixz/DFFLoader & TextureDictionary
+
+// @ts-nocheck
 import * as THREE from 'three';
 import DFFReader from './dffreader';
 import { TextureDictionary } from './txd';
@@ -121,6 +124,13 @@ DFFLoader.prototype = {
             }
             if (colorBuffer) {
               throw 'DFFLoader: Not implemented';
+              // todo
+              //const color = parseInt(rwGeometry.prelitcolor[index], 16);
+              //colorBuffer.setXYZ(vertexPos,
+              //    Math.min(((color & 0xFF0000) >> 8 * 2) * ColorCoefficent, 255),
+              //    Math.min(((color & 0x00FF00) >> 8 * 1) * ColorCoefficent, 255),
+              //    Math.min(((color & 0x0000FF) >> 8 * 0) * ColorCoefficent, 255),
+              //);
             }
             vertexPos += 1;
           }
@@ -282,6 +292,7 @@ DFFLoader.prototype = {
           }
           return -1;
         }
+        // attach by index
         for (var i = 0; i < nodeInfo.length; i++) {
           nodeInfo[i].node = findUnattachedById(parentNode, nodeInfo[i].id);
           bones[i] = nodeInfo[i].node;

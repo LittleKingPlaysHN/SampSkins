@@ -1,3 +1,5 @@
+// https://github.com/aap/rwtools/blob/f00a861451371fe1435e21b0404722eff7389686/src/txdread.cpp#L18
+
 import {
   RASTER_PAL4,
   RASTER_PAL8,
